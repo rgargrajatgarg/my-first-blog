@@ -5,6 +5,6 @@ from .models import Post
 
 # Create your views here.
 #for arranging the published posts
-posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+posts = Post.objects.all()
 def post_list(request):
 	return render(request,'blogpost/post_list.html',{'posts':posts})
